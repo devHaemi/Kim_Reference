@@ -6,7 +6,10 @@ function ol(child: string): string {
   return `<ol>${child}</ol>`;
 }
 
-function makeLi(container: (child: string) => string, contents: string[]): string {
+function makeLi(
+  container: (child: string) => string,
+  contents: string[]
+): string {
   const liList = [];
 
   for (const content of contents) {
