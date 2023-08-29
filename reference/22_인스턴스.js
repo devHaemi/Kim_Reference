@@ -55,5 +55,26 @@ class CartV2 {
     this.cart = [];
   }
 
-  getNewId;
+  getNewId = () => {
+    this.currentId++;
+    return this.currentId;
+  };
+
+  addItem = item => {
+    this.cart.push({
+      ...item,
+      id: this.getNewId(),
+    });
+  };
+
+  clearCart = () => {
+    this.currentId = 0;
+    this.cart = [];
+  };
 }
+
+const shoppingCart2 = new CartV2();
+
+shoppingCart2.addItem(CartV2.createItem('수박', 8000));
+shoppingCart2.addItem(CartV2.createItem('사과', 12000));
+shoppingCart2.addItem(CartV2.createItem('두부', 2000));
